@@ -1,18 +1,19 @@
 import { h } from 'preact';
 import { useState } from 'preact/hooks';
 
-export default function Greeting({messages}) {
+export default function Greeting({hi, messages}) {
 
+  const randomHi = () => hi[(Math.floor(Math.random() * hi.length))];
   const randomMessage = () => messages[(Math.floor(Math.random() * messages.length))];
 
-  const [greeting, setGreeting] = useState(messages[0]);
+  const [greeting, setGreeting] = useState(hi[0]);
+  const [thx, setThx] = useState(messages[0]);
 
   return (
     <div>
-      <h3>{greeting}! Thank you for visiting!</h3>
-      <button onClick={() => setGreeting(randomMessage())}>
-        New Greeting
-      </button>
+      <h3>{greeting}! {thx}!</h3>
+        {/* <a href="#a" class="outline" role="button" onClick={setGreeting(randomHi())}> New Hi!</a> */}
+        <a href="#a" class="outline" role="button" onClick={() => {setThx(randomMessage()); setGreeting(randomHi())}}> New Greeting</a>
     </div>
   );
 }
