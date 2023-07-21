@@ -15,7 +15,7 @@ const pageTitle = "My Astro Learning Blog";
         {
             allPosts.map((post) => (
                 <BlogPost
-                    pubDate={post.data.pubDate.toDateString()}
+                    pubDate={post.data.pubDate}
                     url={"/posts/" + post.slug}
                     title={post.data.title}
                 />

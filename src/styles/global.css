@@ -97,6 +97,10 @@ a:focus {
 }
 
 @media screen and (min-width: 636px) {
+  body {
+    width: 80%;
+  }
+
   .nav-links {
     display: block;
     position: static;
@@ -129,6 +133,7 @@ html.dark {
 
 .dark .outline {
   color: white;
+  background-color: var(--five-color);
 }
 
 .button {
