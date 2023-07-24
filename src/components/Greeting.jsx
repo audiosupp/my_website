@@ -10,10 +10,11 @@ export default function Greeting({hi, messages}) {
   const [thx, setThx] = useState(messages[0]);
 
   return (
-    <div>
-      <h3>{greeting}! {thx}!</h3>
+    <div class="container">
+      <h3 class="h3-index">{greeting}! {thx}!</h3>
         {/* <a href="#a" class="outline" role="button" onClick={setGreeting(randomHi())}> New Hi!</a> */}
-        <a href="#a" class="outline" role="button" onClick={() => {setThx(randomMessage()); setGreeting(randomHi())}}> New Greeting</a>
+      <a href="#a" class="outline outline-index" role="button" onClick={() => {setThx(randomMessage()); setGreeting(randomHi())}}> New Greeting</a>
     </div>
   );
 }
+

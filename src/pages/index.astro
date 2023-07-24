@@ -5,27 +5,28 @@ const pageTitle = "Home Page";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<Greeting
-		client:load
-		hi={["Hi", "Hej", "Hallo", "Hola", "Habari", "Привет", "Вітаю", "Ciao"]}
-		client:load
-		messages={[
-			"Thanks for visiting",
-			"Obrigado pela visita",
-			"Благодаря за посещението",
-			"ご訪問ありがとう",
-			"Dziękujemy za odwiedziny",
-			"Tak for besøget",
-		]}
-	/>
+  <div class="container">
+    <Greeting
+      client:load
+      hi={["Hi", "Hej", "Hallo", "Hola", "Habari", "Привет", "Ciao"]}
+      client:load
+      messages={[
+        "Thanks for visiting",
+        "Obrigado pela visita",
+        "Благодаря за посещението",
+        "ご訪問ありがとう",
+        "Dziękujemy za odwiedziny",
+        "Tak for besøget",
+      ]}
+    />
+  </div>
 </BaseLayout>
 
 <style>
-	.container-index {
-		display: flex;
-		align-items: center;
-		align-content: center;
-		justify-content: center;
-		justify-items: center;
-	}
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 </style>
