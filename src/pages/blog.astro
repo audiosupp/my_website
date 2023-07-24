@@ -6,26 +6,33 @@ import TagIndex from "../components/TagIndex.astro";
 
 const allPosts = await getCollection("posts");
 const pageTitle = "My Astro Learning Blog";
+
+const options = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <TagIndex />
-    <p>This is where I will post about my journey learning Astro.</p>
-    <ul>
-        {
-            allPosts.map((post) => (
-                <BlogPost
-                    pubDate={post.data.pubDate}
-                    url={"/posts/" + post.slug}
-                    title={post.data.title}
-                />
-            ))
-        }
-    </ul>
+  <TagIndex />
+  <p>This is where I will post about my journey learning Astro.</p>
+  <ul>
+    {
+      allPosts.map((post) => (
+        <BlogPost
+          pubDate={post.data.pubDate.toLocaleString("ru-Ru", options)}
+          url={"/posts/" + post.slug}
+          title={post.data.title}
+        />
+      ))
+    }
+  </ul>
 </BaseLayout>
 
 <style>
-    ul li {
-        list-style: none;
-    }
+  ul li {
+    list-style: none;
+  }
 </style>

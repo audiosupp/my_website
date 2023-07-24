@@ -4,19 +4,19 @@ import BlogPost from "../../components/BlogPost.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-    const allPosts = await getCollection("posts");
-    // this matching js only works if .md file containe at least one tag and in brackets. eg. tag: ['astro']
-    const unqTags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+  const allPosts = await getCollection("posts");
+  // this matching js only works if .md file containe at least one tag and in brackets. eg. tag: ['astro']
+  const unqTags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 
-    return unqTags.map((tag) => {
-        const filteredPosts = allPosts.filter((post) =>
-            post.data.tags.includes(tag)
-        );
-        return {
-            params: { tag },
-            props: { posts: filteredPosts },
-        };
-    });
+  return unqTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post) =>
+      post.data.tags.includes(tag)
+    );
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
 }
 
 const { tag } = Astro.params;
@@ -24,12 +24,12 @@ const { posts } = Astro.props;
 ---
 
 <BaseLayout pageTitle={tag}>
-    <p>Posts tagged with {tag}</p>
-    <ul>
-        {
-            posts.map((post) => (
-                <BlogPost url={"/posts/" + post.slug} title={post.data.title} />
-            ))
-        }
-    </ul>
+  <p>Posts tagged with {tag}</p>
+  <ul class="grid">
+    {
+      posts.map((post) => (
+        <BlogPost url={"/posts/" + post.slug} title={post.data.title} />
+      ))
+    }
+  </ul>
 </BaseLayout>

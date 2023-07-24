@@ -1,34 +1,35 @@
 ---
 const { pubDate, url, title } = Astro.props;
 const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
 };
+// pubDate = pubDate.toLocaleString("ru-Ru", options);
 ---
 
 <li class="list">
-    <small>{pubDate.toLocaleString("ru-Ru", options)}</small>
-    <br />
-    <a href={url}>{title}</a>
+  <small>{pubDate}</small>
+  <br />
+  <a href={url}>{title}</a>
 </li>
 
 <style>
-    a {
-        /* color: var(--four-color); */
-        font-weight: bold;
-    }
-    small {
-        font-style: italic;
-        background-color: var(--second-color);
-        border-radius: 5px;
-        padding: 5px;
-        font-size: 0.7em;
-        margin-right: 0.5em;
-    }
-    .list {
-        list-style: none;
-        margin-left: 0;
-    }
+  a {
+    /* color: var(--four-color); */
+    font-weight: bold;
+  }
+  small {
+    font-style: italic;
+    /* background-color: var(--second-color); */
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 0.7em;
+    margin-right: 0.5em;
+  }
+  .list {
+    list-style: none;
+    margin-left: 0;
+  }
 </style>

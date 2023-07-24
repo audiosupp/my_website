@@ -1,7 +1,19 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import localImage from "../assets/404cat/cat1.jpg";
 ---
 
 <BaseLayout pageTitle="404">
-    <p>custom 404 page впихнуть сюда кошку фюрю)</p>
+  <div class="container">
+    <p>Нет такой страницы</p>
+    <Image src={localImage} width={300} alt="Cat 404" />
+  </div>
 </BaseLayout>
+
+<style>
+  .container {
+    display: grid;
+    justify-content: center;
+  }
+</style>
