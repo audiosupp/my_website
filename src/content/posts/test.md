@@ -1,12 +1,15 @@
 ---
-title: "test12"
-pubDate: 2022-07-26
-description: "test"
-author: "Я"
+title: Change for test
+pubDate: 2023-07-25T19:58:02.199Z
+description: test
+author: Я
 image:
-  url: "https://docs.astro.build/assets/full-logo-light.png"
-  alt: "The full Astro logo."
-tags: ["astro", "learning in public"]
+  url: https://docs.astro.build/assets/full-logo-light.png
+  alt: The full Astro logo.
+tags: List [ "astro", "learning in public", "new tag" ]
 ---
+***TEST***
 
-**_TEST_**
+
+
+`gGGff`
