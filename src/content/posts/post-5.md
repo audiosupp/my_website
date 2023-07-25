@@ -2,10 +2,12 @@
 layout: blog
 title: Test
 description: test
-pubDate: 2023-07-2023
+pubDate: 2023-07-25
 author: "me"
-image: assets/16409622757150.jpg
-tags: test
+image:
+  url: "https://docs.astro.build/assets/full-logo-light.png"
+  alt: "test"
+tags: ["test"]
 ---
 
 **test**
