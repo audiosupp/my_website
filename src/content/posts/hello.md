@@ -7,10 +7,9 @@ tags:
   - blog
   - astro
 ---
+
 Hello
 
-
-
-![smolcat](assets/16409622757150.jpg "lol")
+![smolcat](../../assets/16409622757150.jpg)
 
 gfagg
