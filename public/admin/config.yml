@@ -22,9 +22,4 @@ collections: # A list of collections the CMS should be able to edit
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Author", name: "author", widget: "string" }
-      - {
-          label: "Author Twitter Handle",
-          name: "authorTwitter",
-          widget: "string",
-        }
       - { label: "Publish Date", name: "pubDate", widget: "datetime" }
