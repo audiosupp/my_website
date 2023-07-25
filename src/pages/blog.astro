@@ -22,7 +22,7 @@ const options = {
     {
       allPosts.map((post) => (
         <BlogPost
-          pubDate={post.data.pubDate..toLocaleString("ru-Ru", options)}
+          pubDate={post.data.pubDate.toLocaleString("ru-Ru", options)}
           url={"/posts/" + post.slug}
           title={post.data.title}
         />
