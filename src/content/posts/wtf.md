@@ -8,4 +8,7 @@ tags:
   - astro
   - new
 ---
+
 GDGADGADG
+
+(![Cat1](../../assets/404cat/cat1.jpg))
