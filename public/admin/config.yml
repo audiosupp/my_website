@@ -3,7 +3,7 @@ backend:
   branch: master # Branch to update (optional; defaults to master)
 
 media_folder: "src/assets" # Folder where user uploaded files should go
-public_folder: "/images/uploads"
+public_folder: "/assets"
 
 collections: # A list of collections the CMS should be able to edit
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
@@ -15,7 +15,7 @@ collections: # A list of collections the CMS should be able to edit
           label: "Layout",
           name: "layout",
           widget: "hidden",
-          default: "$/layouts/post.astro",
+          default: "../../layouts/MarkdownPostLayout.astro",
         }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
