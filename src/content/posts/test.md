@@ -1,6 +1,6 @@
 ---
 title: "test12"
-pubDate: 2023-07-26
+pubDate: 2022-07-26
 description: "test"
 author: "Я"
 image:
