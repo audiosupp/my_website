@@ -3,65 +3,65 @@ import BaseLayout from "./BaseLayout.astro";
 
 const { frontmatter } = Astro.props;
 const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
 };
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-    <span>
-        <p class="date">
-            {frontmatter.pubDate.toLocaleString("ru-Ru", options)}
+  <span>
+    <p class="date">
+      {frontmatter.pubDate.toLocaleString("ru-Ru", options)}
+    </p>
+  </span>
+  <p><em>{frontmatter.description}</em></p>
+  <!-- <p>Автор: {frontmatter.author}</p> -->
+  <img src={frontmatter.cover} width="300" alt={frontmatter.coverAlt} />
+  <div class="tags">
+    {
+      frontmatter.tags.map((tag) => (
+        <p class="tag">
+          <a href={`/tags/${tag}`}>{tag}</a>
         </p>
-    </span>
-    <p><em>{frontmatter.description}</em></p>
-    <!-- <p>Автор: {frontmatter.author}</p> -->
-    <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
-    <div class="tags">
-        {
-            frontmatter.tags.map((tag) => (
-                <p class="tag">
-                    <a href={`/tags/${tag}`}>{tag}</a>
-                </p>
-            ))
-        }
-    </div>
-    <slot />
+      ))
+    }
+  </div>
+  <slot />
 </BaseLayout>
 
 <style>
-    a {
-        color: var(--four-color);
-    }
+  a {
+    color: var(--four-color);
+  }
 
-    p em {
-        font-size: large;
-    }
+  p em {
+    font-size: large;
+  }
 
-    .date {
-        display: inline-block;
-        font-style: italic;
-        background-color: var(--second-color);
-        border-radius: 5px;
-        padding: 5px;
-        font-size: 0.7em;
-        margin-right: 0.5em;
-    }
+  .date {
+    display: inline-block;
+    font-style: italic;
+    background-color: var(--second-color);
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 0.7em;
+    margin-right: 0.5em;
+  }
 
-    .tags {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 auto;
-    }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
 
-    .tag {
-        margin: 0.25em;
-        border: dotted 1px var(--second-color);
-        border-radius: 0.5em;
-        padding: 0.3em 0.5em;
-        font-size: 1em;
-        background-color: var(--second-color);
-    }
+  .tag {
+    margin: 0.25em;
+    border: dotted 1px var(--second-color);
+    border-radius: 0.5em;
+    padding: 0.3em 0.5em;
+    font-size: 1em;
+    background-color: var(--second-color);
+  }
 </style>
