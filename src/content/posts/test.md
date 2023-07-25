@@ -6,10 +6,9 @@ author: Я
 image:
   url: https://docs.astro.build/assets/full-logo-light.png
   alt: The full Astro logo.
-tags: List [ "astro", "learning in public", "new tag" ]
+tags: ["astro", "learning in public", "new tag"]
 ---
-***TEST***
 
-
+**_TEST_**
 
 `gGGff`
