@@ -3,7 +3,7 @@ backend:
   branch: main # Branch to update (optional; defaults to master)
 
 media_folder: "src/assets/"
-public_folder: "assets"
+public_folder: "../../assets"
 
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
