@@ -7,13 +7,12 @@ import TagIndex from "../components/TagIndex.astro";
 const allPosts = await getCollection("posts");
 const pageTitle = "My Astro Learning Blog";
 
-// const options = {
-//   weekday: "long",
-//   year: "numeric",
-//   month: "long",
-//   day: "numeric",
-// };
-// .toLocaleString("ru-Ru", options)
+const options = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -23,7 +22,7 @@ const pageTitle = "My Astro Learning Blog";
     {
       allPosts.map((post) => (
         <BlogPost
-          pubDate={post.data.pubDate.toDateString()}
+          pubDate={post.data.pubDate..toLocaleString("ru-Ru", options)}
           url={"/posts/" + post.slug}
           title={post.data.title}
         />
