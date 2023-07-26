@@ -4,7 +4,7 @@ import BlogPost from "../components/BlogPost.astro";
 import { getCollection } from "astro:content";
 import TagIndex from "../components/TagIndex.astro";
 
-const allPosts = await getCollection("posts");
+let allPosts = await getCollection("posts");
 const pageTitle = "My Astro Learning Blog";
 
 const options = {
@@ -14,17 +14,15 @@ const options = {
   day: "numeric",
 };
 
-// console.log(post.data.pubDate.getFullYear())
-
-const month = allPosts.map((post) => post.data.pubDate);
-month.sort();
-// console.log(month.sort());
+allPosts = allPosts.sort(
+  (a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate)
+);
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <TagIndex />
   <p>Моё пространство в глобальной сети интернет.</p>
-  <ol reversed>
+  <ul>
     {
       allPosts.map((post) => (
         <BlogPost
@@ -34,16 +32,11 @@ month.sort();
         />
       ))
     }
-  </ol>
+  </ul>
 </BaseLayout>
 
 <style>
-  ol li {
-    /* list-style: none; */
+  ul li {
+    list-style: none;
   }
 </style>
-
-<script>
-  const dates = document.getElementsByClassName("date");
-  console.log(dates);
-</script>
