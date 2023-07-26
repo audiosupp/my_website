@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import { Image } from "astro:assets";
 
 const { frontmatter } = Astro.props;
 const options = {
@@ -63,5 +64,11 @@ const options = {
     padding: 0.3em 0.5em;
     font-size: 1em;
     background-color: var(--second-color);
+  }
+
+  img {
+    image-rendering: optimizeQuality;
+    width: 300px;
+    height: 300px;
   }
 </style>
