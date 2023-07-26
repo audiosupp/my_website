@@ -11,4 +11,4 @@ tags:
 
 GDGADGADG
 
-(![Cat1](../../assets/404cat/cat1.jpg))
+![Cat1](../../assets/404cat/cat1.jpg)
