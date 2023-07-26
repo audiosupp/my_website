@@ -13,12 +13,18 @@ const options = {
   month: "long",
   day: "numeric",
 };
+
+// console.log(post.data.pubDate.getFullYear())
+
+const month = allPosts.map((post) => post.data.pubDate);
+month.sort();
+// console.log(month.sort());
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <TagIndex />
   <p>Моё пространство в глобальной сети интернет.</p>
-  <ul>
+  <ol reversed>
     {
       allPosts.map((post) => (
         <BlogPost
@@ -28,11 +34,16 @@ const options = {
         />
       ))
     }
-  </ul>
+  </ol>
 </BaseLayout>
 
 <style>
-  ul li {
-    list-style: none;
+  ol li {
+    /* list-style: none; */
   }
 </style>
+
+<script>
+  const dates = document.getElementsByClassName("date");
+  console.log(dates);
+</script>
