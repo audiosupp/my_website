@@ -9,3 +9,5 @@ tags: ["astro", "blogging", "learning in public", "successes"]
 ---
 
 After a successful first week learning Astro, I decided to try some more. I wrote and imported a small component from memory!
+
+![cat](../../assets/404cat/cat3.jpg)
