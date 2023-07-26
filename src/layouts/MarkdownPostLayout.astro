@@ -1,11 +1,8 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-import { Image } from "astro:assets";
 
 const { frontmatter } = Astro.props;
-console.log(frontmatter);
-const image = frontmatter.cover;
-console.log(image);
+
 const options = {
   weekday: "long",
   year: "numeric",
@@ -22,12 +19,6 @@ const options = {
   </span>
   <p><em>{frontmatter.description}</em></p>
   <!-- <p>Автор: {frontmatter.author}</p> -->
-  <Image
-    src={frontmatter.cover}
-    width="300"
-    height="300"
-    alt={frontmatter.coverAlt}
-  />
   <div class="tags">
     {
       frontmatter.tags.map((tag) => (
