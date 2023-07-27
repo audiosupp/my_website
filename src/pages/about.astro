@@ -1,53 +1,65 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
-import cat from "../assets/404cat/cat2.jpg";
+import avatar from "../assets/misc/avatar.png";
 
 const pageTitle = "About Me";
 
 const identity = {
   firstName: "Ваня",
   country: "РФ",
-  occupation: "начинающим программистом",
+  occupation: "начинающий программист (в поиске работы)",
   hobbies: ["заниматься музыкой", "новые технологии"],
 };
 
-const skills = ["HTML", "CSS", "JavaScript", "Astro", "Python/Flask"];
+const skills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "Astro",
+  "Python/Flask",
+  "SQL/SQLite",
+];
 
 const happy = true;
 const finished = true;
 const goal = 3;
 
-const skillColor = "var(--five-color)";
+const skillColor = "var(--four-color)";
 const fontWeight = "bold";
 const textCase = "uppercase";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <h2>Про меня</h2>
-  <div class="container">
+  <div class="cont container-wrap">
     <Image
-      src={cat}
-      alt="Кот, но потом буду я"
+      src={avatar}
+      alt="Картинка из интернета, но потом буду я"
       width={300}
       height={300}
       class="image"
     />
   </div>
+  <small
+    >Просто картинка из интернета которая очень понравилась.
+    <br />
+    Автор (предположительно): MaximovInk (<a
+      href="https://www.reddit.com/user/MaximovInk/">reddit</a
+    >)</small
+  >
   <p>
-    I am working through Astro's introductory tutorial. This is the second page
-    on my website, and it's the first one I built myself! Я прохожу курс кс50.
+    Пока не очень ясно, что здесь писать (не привлекая АИ к этому :) Эта
+    страница одна из первых, что я сделал!
   </p>
-  <p>
-    This site will update as I complete more of the tutorial, so keep checking
-    back and see how my journey is going!
-  </p>
+  <p>Чем дальше в путь, тем больше буду дополнять эту страницу.</p>
   <p>Несколько фактов про меня:</p>
   <ul>
     <li>Меня зовут {identity.firstName}.</li>
     <li>
-      Я живу в {identity.country} и хотел бы работать программистом, пока я только
-      начинаю.
+      Я нахожу: {identity.country}
+      <br />
+      Работаю: {identity.occupation}.
     </li>
     {
       identity.hobbies.length >= 2 && (
@@ -58,6 +70,12 @@ const textCase = "uppercase";
     }
   </ul>
   <p>Мои навыки:</p>
+  <small
+    >Не во всём из этого я хорош, но перечисленное использовал в проектах и
+    обучении.
+    <br />
+    Язык C я не стал указывать :)
+  </small>
   <ul>
     {skills.map((skill) => <li class="skill">{skill}</li>)}
   </ul>
@@ -84,5 +102,26 @@ const textCase = "uppercase";
     border-radius: 50%;
     height: 200px;
     width: 200px;
+  }
+
+  small {
+    font-size: small;
+    font-style: italic;
+    margin: 0 1rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  p {
+    padding: 0;
+    margin: 0.8em;
+  }
+
+  ul li {
+    list-style: circle;
+  }
+
+  .cont {
+    margin: 0 1rem;
   }
 </style>
