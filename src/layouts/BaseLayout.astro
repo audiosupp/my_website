@@ -35,11 +35,10 @@ const { pageTitle } = Astro.props;
       <Header />
       <slot />
       <Footer />
-      <script>
-        import "../scripts/menu.js";
-      </script>
     </div>
     <script>
+      import "../scripts/menu.js";
+
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", (user) => {
           if (!user) {
