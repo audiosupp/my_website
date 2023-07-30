@@ -6,7 +6,7 @@ export async function get() {
     return rss({
         title: 'Astro Learner | Blog',
         description: 'My journey learning Astro',
-        site: 'https://my-astro-webblog.netlify.app',
+        site: 'https://audiosupp.site',
         items: posts.map((post) => ({
             title: post.data.title,
             pubDate: post.data.pubDate,
