@@ -13,8 +13,9 @@ const { pageTitle } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
 
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"
-    ></script>
+    <script
+      is:inline
+      src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <link
       rel="stylesheet"
@@ -35,7 +36,9 @@ const { pageTitle } = Astro.props;
       <Header />
       <slot />
       <Footer />
-      <script src="../scripts/menu.js"></script>
+      <script src="../scripts/menu.js">
+        import "../scripts/menu.js";
+      </script>
     </div>
     <script>
       if (window.netlifyIdentity) {
