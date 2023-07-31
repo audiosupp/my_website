@@ -22,7 +22,11 @@ h4,
 h5,
 h6,
 li {
-  color: black;
+  color: rgba(20, 20, 20, 0.937);
+}
+
+small {
+  color: rgba(38, 38, 38, 0.937);
 }
 
 body {
